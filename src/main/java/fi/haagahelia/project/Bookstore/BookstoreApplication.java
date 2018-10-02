@@ -3,9 +3,9 @@ package fi.haagahelia.project.Bookstore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 
 
@@ -24,8 +24,9 @@ public class BookstoreApplication {
 	@Bean
 	public CommandLineRunner bookDemo(BookRepository repository) {
 		return (args) -> {
-			log.info("save a test book");
+			log.info("save a few test books");
 			repository.save(new Book("To Kill a Mockingbird", "Harper Lee", 1960, "9780446310789", 8.99));
+			repository.save(new Book("The Year of the Hare", "Arto Paasilinna", 1975, "9513512525", 15.00));
 			
 			
 			log.info("fetch all books");

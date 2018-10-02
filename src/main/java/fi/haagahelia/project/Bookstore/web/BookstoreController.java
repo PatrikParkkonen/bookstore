@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ResponseBody
 public class BookstoreController {
 	
-	@RequestMapping("/index")
+	@RequestMapping("/")
 	public String indexHi() {
 		return "Welcome to the bookstore!";
 	}
