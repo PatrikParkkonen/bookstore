@@ -17,7 +17,7 @@ public class Book {
 	private String isbn;
 	private String price;
 
-	protected Book() {}
+	public Book() {}
 
 	public Book(String title, String author, int year, String isbn, String price) {
 		super();
