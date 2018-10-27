@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import fi.haagahelia.project.Bookstore.domain.Category;
 
@@ -23,6 +24,7 @@ public class Book {
 	private String price;
 	
 	 	@ManyToOne
+	 	@JsonIgnore
 	    @JoinColumn(name = "categoryid")
 	    private Category category;
 
