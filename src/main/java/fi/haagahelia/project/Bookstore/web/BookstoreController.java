@@ -16,7 +16,7 @@ import fi.haagahelia.project.Bookstore.domain.Book;
 import fi.haagahelia.project.Bookstore.domain.BookRepository;
 import fi.haagahelia.project.Bookstore.domain.CategoryRepository;
 
-;
+
 
 
 
@@ -73,7 +73,20 @@ public class BookstoreController {
         return "redirect:../booklist";
     }     
     	
-}
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public String editBook(@PathVariable("id") Long bookId, Model model){
+    	model.addAttribute("book", brepository.findById(bookId));
+    	model.addAttribute("category", crepository.findAll());
+        return "editbook";
+    }
 
+    @RequestMapping(value = "/edit/editsave", method = {RequestMethod.GET, RequestMethod.PUT, RequestMethod.POST})
+    public String edit(Long bookId, Book book){
+        brepository.save(book);
+        return "redirect:booklist";
+    }    
+    
+
+}
 
 
