@@ -83,7 +83,7 @@ public class BookstoreController {
     @RequestMapping(value = "/edit/editsave", method = {RequestMethod.GET, RequestMethod.PUT, RequestMethod.POST})
     public String edit(Long bookId, Book book){
         brepository.save(book);
-        return "redirect:booklist";
+        return "redirect:../booklist";
     }    
     
 
