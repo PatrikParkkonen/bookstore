@@ -44,7 +44,7 @@ public class Book {
 		return id;
 	}
 	public void setId (Long id) {
-		
+		this.id = id;
 	}
 
 	public void setTitle(String title) {
@@ -100,10 +100,10 @@ public class Book {
 	@Override
 	public String toString() {
 		if (this.category != null)
-			return "Book [id=" + id + "title=" + title + ", author=" + author + ", year=" + year + ", isbn=" + isbn + ", price=" + price + ", category =" + this.getCategory() + 
+			return "Book [id=" + id + ", title=" + title + ", author=" + author + ", year=" + year + ", isbn=" + isbn + ", price=" + price + ", category =" + this.getCategory() + 
 					 "]";
 		else
-		return "Book [id=" + id + "title=" + title + ", author=" + author + ", year=" + year + ", isbn=" + isbn + ", price=" + price
+		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", year=" + year + ", isbn=" + isbn + ", price=" + price
 				+ "]";
 	}
 
